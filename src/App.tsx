@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Alert from "./components/ui/Alert/Alert"
+import { AlertTriangle, BellRing, CheckCheck, Info } from 'lucide-react';
+import { Ban } from 'lucide-react';
 import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="app">
+      <Alert title="Upgrade your plan" type="default" icon = {<BellRing/>}>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptate numquam provident quasi consectetur, voluptas, magni ratione omnis cumque cum iusto rem, assumenda deserunt expedita. <a href="/">Doloribus quia</a> dolorum similique commodi?
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </Alert>
+      <Alert title="Something went worng" type="danger" icon = {<Ban size={20}/>}  discription={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error totam nesciunt incidunt omnis, suscipit culpa inventore molestias? Beatae, neque."}/>
+      <Alert title="Note" type="info" icon = {<Info size={20} />}  discription={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error totam nesciunt incidunt omnis, suscipit culpa inventore molestias? Beatae, neque."}/>
+      <Alert title="Tios and Tricks" type="warning" icon = {<CheckCheck size={20} />}  discription={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error totam nesciunt incidunt omnis, suscipit culpa inventore molestias? Beatae, neque."}/>
+      <Alert title="Product Added" type="success" icon = {<AlertTriangle size={20} />}  discription={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus error totam nesciunt incidunt omnis, suscipit culpa inventore molestias? Beatae, neque."}/>
+    </div>
   )
 }
-
 export default App
